@@ -24,8 +24,11 @@ import PipelineTypes::*;
 
 typedef struct packed { // 
     DataPath numIC_Miss;
+    DataPath numIC_Hits;
     DataPath numLoadMiss;
+    DataPath numLoadHits;
     DataPath numStoreMiss;
+    DataPath numStoreHits;
     DataPath numBranchPredMiss;
 
     DataPath numBranchPredMissDetectedOnDecode;

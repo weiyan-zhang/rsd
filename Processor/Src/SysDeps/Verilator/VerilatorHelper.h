@@ -325,8 +325,11 @@ struct IssueQueueDebugRegister{
 
 struct PerfCounterPath {
     DataPath numIC_Miss;
+    DataPath numIC_Hits;
     DataPath numLoadMiss;
+    DataPath numLoadHits;
     DataPath numStoreMiss;
+    DataPath numStoreHits;
     DataPath numStoreLoadForwardingFail;
     DataPath numMemDepPredMiss;
     DataPath numBranchPredMiss;
@@ -627,8 +630,11 @@ static void GetDebugRegister(DebugRegister* d, VMain_Zynq_Wrapper *top)
 
 #ifdef RSD_FUNCTIONAL_SIMULATION
     RSD_MAKE_STRUCT_ACCESSOR_LV2(DebugRegister, perfCounter, DataPath, numIC_Miss)
+    RSD_MAKE_STRUCT_ACCESSOR_LV2(DebugRegister, perfCounter, DataPath, numIC_Hits)
     RSD_MAKE_STRUCT_ACCESSOR_LV2(DebugRegister, perfCounter, DataPath, numLoadMiss)
+    RSD_MAKE_STRUCT_ACCESSOR_LV2(DebugRegister, perfCounter, DataPath, numLoadHits)
     RSD_MAKE_STRUCT_ACCESSOR_LV2(DebugRegister, perfCounter, DataPath, numStoreMiss)
+    RSD_MAKE_STRUCT_ACCESSOR_LV2(DebugRegister, perfCounter, DataPath, numStoreHits)
     RSD_MAKE_STRUCT_ACCESSOR_LV2(DebugRegister, perfCounter, DataPath, numStoreLoadForwardingFail)
     RSD_MAKE_STRUCT_ACCESSOR_LV2(DebugRegister, perfCounter, DataPath, numMemDepPredMiss)
     RSD_MAKE_STRUCT_ACCESSOR_LV2(DebugRegister, perfCounter, DataPath, numBranchPredMiss)

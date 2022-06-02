@@ -20,14 +20,19 @@ module PerformanceCounter (
         for ( int i = 0; i < LOAD_ISSUE_WIDTH; i++ ) begin
             if (port.loadMiss[i]) begin
                 next.numLoadMiss++;
+            end else begin
+                next.numLoadHits++;
             end
         end
         for ( int i = 0; i < STORE_ISSUE_WIDTH; i++ ) begin
             if (port.storeMiss[i]) begin
                 next.numStoreMiss++;
+            end else begin
+                next.numStoreHits++;
             end
         end
         next.numIC_Miss += port.icMiss ? 1 : 0;
+        next.numIC_Hits += port.icMiss ? 0 : 1; 
         next.numStoreLoadForwardingFail += port.storeLoadForwardingFail ? 1 : 0;
         next.numMemDepPredMiss += port.memDepPredMiss ? 1 : 0;
         next.numBranchPredMiss += port.branchPredMiss ? 1 : 0;

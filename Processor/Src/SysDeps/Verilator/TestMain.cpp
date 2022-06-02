@@ -338,9 +338,12 @@ int main(int argc, char** argv) {
     registerFileCSV_Dumper.Close();
 
     // Simulation Result
-    printf("Num of I$ misses: %d\n", debugRegister.perfCounter.numIC_Miss);
-    printf("Num of D$ load misses: %d\n", debugRegister.perfCounter.numLoadMiss);
-    printf("Num of D$ store misses: %d\n", debugRegister.perfCounter.numStoreMiss);
+    printf("Num of IC misses: %d\n", debugRegister.perfCounter.numIC_Miss);
+    printf("Num of IC hits: %d\n", debugRegister.perfCounter.numIC_Hits);
+    printf("Num of DC load misses: %d\n", debugRegister.perfCounter.numLoadMiss);
+    printf("Num of DC load hits: %d\n", debugRegister.perfCounter.numLoadHits);
+    printf("Num of DC store misses: %d\n", debugRegister.perfCounter.numStoreMiss);
+    printf("Num of DC store hits: %d\n", debugRegister.perfCounter.numStoreHits);
     printf("Num of branch prediction misses: %d\n", debugRegister.perfCounter.numBranchPredMiss);
     printf("Num of branch prediction misses detected on decode: %d\n", debugRegister.perfCounter.numBranchPredMissDetectedOnDecode);
     printf("Num of store-load-forwanind misses: %d\n", debugRegister.perfCounter.numStoreLoadForwardingFail);
